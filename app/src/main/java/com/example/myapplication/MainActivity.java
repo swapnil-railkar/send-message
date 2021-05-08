@@ -1,11 +1,11 @@
 package com.example.myapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,13 +14,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-    public void onSendMessage(View view)
-    {
-        EditText message=(EditText)findViewById(R.id.message);
-        String messagetext=message.getText().toString();
-        Intent intent=new Intent(Intent.ACTION_SEND);
+
+    public void onSendMessage(View view) {
+        EditText message = (EditText) findViewById(R.id.message);
+        String messageText = message.getText().toString();
+        Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
-        intent.putExtra(Intent.EXTRA_TEXT,messagetext);
+        intent.putExtra(Intent.EXTRA_TEXT, messageText);
         startActivity(intent);
     }
 }
